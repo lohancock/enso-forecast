@@ -32,5 +32,4 @@ The content of this repository is
 (a) the R code that initializes the workspace (startup.R) a
 (b) the R code that trains/tests the statistical model, calculates a truth table, and prepares a forecast figure (enso-routine used-for-abstract-july21.R)
 (c) the data files. 
-Note that the enso-routine code expects to find data files in a subdirectory which it refers to as ~/enso/data/  .  Here however I have put everything into one folder.  Thus the main analysis routine requires editing to fix that reference.
-  
+Note that the enso-routine code expects to find data files in a subdirectory which it refers to as ~/enso/data/  .  Here however they are all together in a zip file at the top level.  Thus unzip the data files and put them into a properly named subdirectory.
