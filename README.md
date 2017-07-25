@@ -28,8 +28,9 @@ A statistical analysis of the ensemble forecast would need to incorporate soluti
 
 The presentation will present the same calculation for recent centuries for comparison with known events, and will update the forecast through 2020.
 
-The code that trains/tests the statistical model, calculates a truth table, and prepares a forecast figure, is the content of this repository.  The code is R code.
-   startup.R
-   some long name.R
-   A directory for data
-   the data files
+The content of this repository is 
+(a) the R code that initializes the workspace (startup.R) a
+(b) the R code that trains/tests the statistical model, calculates a truth table, and prepares a forecast figure (enso-routine used-for-abstract-july21.R)
+(c) the data files. 
+Note that the enso-routine code expects to find data files in a subdirectory which it refers to as ~/enso/data/  .  Here however I have put everything into one folder.  Thus the main analysis routine requires editing to fix that reference.
+  
