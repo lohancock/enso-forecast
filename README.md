@@ -1,7 +1,5 @@
 # enso-forecast
-This repository is related to the presentation I am preparing for AMS January 2018 (Austin)
-
-The abstract follows.  It explains the purpose of all this, then refers to Github for the code itself.  
+This repository is related to the presentation I am preparing for AMS January 2018 (Austin).  The abstract follows.  It explains the purpose of all this, then lists the files the repository will contain.
 
 If Earth has a ring system (as other planets do), it might drive ENSO since the changing configuration of the rings would drive global cycles of Earth shading. Infalling ring dust, cold and electrically charged, could also drive local cycles in wind speed and direction, precipitation intensity, frequency of lightning strokes, sea surface temperature, and nutrient availability.
 The purpose of this effort is to set out a corresponding ENSO prediction for comparison with the climate of the next few years.
