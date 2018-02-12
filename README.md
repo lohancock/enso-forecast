@@ -1,35 +1,35 @@
 # enso-forecast
-This repository is related to the presentation I am preparing for AMS January 2018 (Austin).  The abstract follows.  It explains the purpose of all this, then lists the files the repository will contain.
 
-If Earth has a ring system (as other planets do), it might drive ENSO since the changing configuration of the rings would drive global cycles of Earth shading. Infalling ring dust, cold and electrically charged, could also drive local cycles in wind speed and direction, precipitation intensity, frequency of lightning strokes, sea surface temperature, and nutrient availability.
-The purpose of this effort is to set out a corresponding ENSO prediction for comparison with the climate of the next few years.
+**trying out a planetary ring system to predict enso**
 
-The idea that Earth has a ring-driven climate was first put forward by O’Keefe (1980). It has faced several challenges. First, only the Moon could replenish a persistent ring. That is, if the Moon is dead there cannot be a persistent ring. And the Moon has indeed been thought by many geologists to be dead. But that majority view was challenged by Verbiscer in 2009, as evidence of geological activity on the Moon as little as 50 million years ago was established. Activity may have occurred since then – the methodology did not have the resolution to establish that.
+This repository presents the R routines used for the preparation of a poster presentation for the annual meeting of the American Meteorologial Society in Austin, Texas, 2018. https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
 
-A second area of challenge is the question of why the ring has not been observed. Broadly the answer seems to be that while it must have been observed if it exists, it could have been misidentified. We will not address any of those issues here. Of note, we have reviewed CWOP solar radiation data, a half-billion observations of solar radiation made by thousands of volunteer weather stations from 2009 forward in a global distribution. Solar radiation data is not inconsistent with the ring hypothesis (Hancock and Chadwick 2016, https://ams.confex.com/ams/96Annual/webprogram/Session38896.html).
+This repository provides the data and R routines used to prepare figures on the poster https://ams.confex.com/ams/98Annual/webprogram/Handout/Paper321391/PlanetaryRingSystemForENSOPredictionJan2018.pdf
 
-Our exploration of this question is driven by two considerations that we believe are of immediate and broad appeal: First: As noted above, if the Moon is not geologically active, there can be no persistent ring system. It follows from this that if there is a persistent ring system, then the Moon is geologically active. If so, we would wish to develop all available detail on that. Second: if there is a ring system, then the effects of this driver will not be rightly identified by normal existing analyses, because this driver’s effects would be almost but not quite seasonal, almost but not quite aligned with terrestrial coordinate systems. On the other hand, understanding this driver in its own coordinate framework and timeframes could support a jump in forecasting skill for some teleconnections. This driver is best sought directly.
+**the data**
 
-As a test and exemplar of what might be done to seek this jump in skill, this presentation considers the ENSO cycle, hypothesizing that it is driven by a cycle in the configuration of a two-ring system. A two-ring system should be considered because it is the most general possibility: an equatorial ring and one in the plane of the Moon’s orbit are the two orientations observed at Saturn. No other planetary ring orientations are known at this time. The key cycle concerned would be the precession of lunar nodes, the cycle on which the two rings would cycle in and out of phase with each other. It is 18.3 years. The proposal is that the ENSO cycle concerns this cycle. For example, Earth would be more effectively shaded when the rings were out of phase, and less effectively shaded when they were in phase . A visualization of this geometry is presented at 1997 which may be compared to 2007.
+The poster hypothesis was that ENSO could be predicted from astronomical ephemeris, namely the configuration of sun, moon, and Earth, plus sunspots.  This repository stores those datthe asets as they were when I used them:  
 
-A statistical model has been developed using naïve Bayes techniques to predict the multivariate ENSO index (MEI) (broken out as four categories) from (a) the phase of the lunar precession of nodes, (b) phase of the solar year, (c) phase of the eclipse year, (d) sunspot number as a proxy for solar activity that is expected to thin the entire structure when strong; and (e) MEI of two months prior, introduced as a proxy for climate persistence.
+- a time series of ENSO, for which I used the multivariate ENSO index prepared and updated by NOAA, called X
+- ephemeris of the Moon from JPL, called X
+- ephemeris of the Earth from JPL, called X
+- time series of sunspots from SIDC, called X
 
-A typical train/test run of the model (80%/20%) over monthly values of the MEI from 1950 - 2016 results in a truth table (not provided in the Github readme but is an output of the attached code.
+The datasets were read into data blocks for analysis.  The key issue here is that the model is developed from data in the time period covered by the MEI, 1875 to present.  It is a naive Bayes model.  I wish to extend that model forward in time.  Thus I compute the statistical breaks over the time period where the model is computed, and must use the same breaks going forward in time, else the model is inapplicable.
+A second issue is that I wish to be able to change the number of bands into which the data is sorted for the Bayes analysis.  Smaller bands show the existence of relationships very clearly but the corresponding forecasts are not high resolution.
 
-Adapting this model for forecasting rather than hindcasting, the issue is that we do not know future values of MEI. So we have undertaken a kind of “ensemble” forecast: the band value of the MEI is predicted four times at each time point. Results are presented in the Figure (not provided in the Github readme but is an output of the attached code) , where
+**the R routines**
 
-a red circle presents the prediction obtained using for the prior MEI (two months prior) a band value between 1 and 5 (an El Nino signal);
-a pink circle presents the prediction obtained using for the prior MEI a band value 1 and 0 (a warm-neutral signal),
-a green circle presents the prediction based on prior MEI between 0 and -1 (cool-neutral),
-a blue circle presents the prediction for prior MEI less than -1 (a La Nina signal).
-Statistical predictions are provided as categorization of MEI values into those same four bands. The predicted bands are distinguished at the vertical axis, where predictions plotted in the uppermost band are for high values, essentially El Nino, and so on down over four bands.
+*datablocks.R*
 
-A statistical analysis of the ensemble forecast would need to incorporate solution to some statistical issues that we are not going to take up. But what we can say is that If the calculated truth table is representative, then this “ensemble” forecast suggests that a strong persistent El Nino is unlikely until late 2019. This point will be further discussed in the presentation, in terms of where the typical errors lie.
+Taking these two issues into consideration, it is necessary to break out the original data into bands and store the corresponding break points each time new bands are tried - and then to use those breaks for the future datasets (ephemeris, assumed sunspot time series).  The R routine datablocks.R does all that
 
-The presentation will present the same calculation for recent centuries for comparison with known events, and will update the forecast through 2020.
+*Panels*
 
-The content of this repository is 
-(a) the R code that initializes the workspace (startup.R) a
-(b) the R code that trains/tests the statistical model, calculates a truth table, and prepares a forecast figure (enso-routine used-for-abstract-july21.R)
-(c) the data files. 
-Note that the enso-routine code expects to find data files in a subdirectory which it refers to as ~/enso/data/  .  Here however they are all together in a zip file at the top level.  Thus unzip the data files and put them into a properly named subdirectory.
+Panel 3 of the poster shows the relationship between the multivariate ENSO index and each of the six variables used as predictors.  These figures are produced in the routine XX.  This particular appearance requires having previously run datablocks.R with assignments YYYYY.
+
+Panel 4 of the poster at the top shows (left) the truth table for the 6-variable model predictions of the multivariate ENSO index.  It shows it graphically - bluer squares are less occupied, white squares are more occupied.  To the right is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  The point is that the relationship still exists - a white spine runs along the diagonal, although contrast is lower  These figures are produced in teh routine Xx.  This particular appearance requires having previously run datablocks.R with assignments YYYYY.
+
+Panel 4 then presents a time series in which a time series of the predictive model is presented as a red line and a blue line, while the multivariate ENSO index 1875 to 2016 is presented as black dots. The red line presents a model run where prior MEI was taken as a constant value at the uppermost band.  The blue line presents a model run where prior MEI is taken as a constant value at the lowest band.  MEI should therefore fall in between the two.  Despite the ambiguities as some points have no prediction at all due to data insufficiency, the prediction is clearly made overall and a comparison is possible in my opinion.  This time series 1875 to 2016 is produced in the routine XXX.  This particular appearance requires having previously run datablocks. R with assignments YYY.
+
+Panel 5 presents an MEI forecast.  Two panels present a forecast for the assumption that SIDC monthly sunspot count will be a constant value 6 going forward; the two panel below that, that SIDC monthly sunspot count will be 25 going forward.  In this case, the forecast is made ten times (each time based on a random draw of 80 percent of available data).  Each includes a few years of MEI data used to build the model (up to 2016), plus the year 2017 which was not used to build the model but is provided for comparison.  Each predicton is presented at high time resolution and low.  These figures are using the routine XXX.  This particular appearance requires having previously run datablocks.R with assignments YYY.  The file WWW.txt provides some additional details on the setup of the multiple instances.
