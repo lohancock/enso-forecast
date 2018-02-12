@@ -15,6 +15,7 @@ The hypothesis of the presentation was that ENSO could be predicted from astrono
 - ephemeris of the Earth from JPL, called X
 - time series of sunspots from SIDC, called X
 
+     
 **the R routines in the repository**
 
 *datablocks.R*
