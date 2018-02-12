@@ -1,8 +1,10 @@
 # enso-forecast
 
+
 **trying out a planetary ring system to predict enso**
 
 This repository presents the R routines used for the preparation of a poster presentation, **Trying out a planetary ring system to predict ENSO** for the annual meeting of the American Meteorologial Society in Austin, Texas, 2018. https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
+
 
 **the data in the repository**
 
@@ -15,6 +17,7 @@ The hypothesis of the presentation was that ENSO could be predicted from astrono
 
 The datasets were read into data blocks for analysis.  The key issue here is that the model is developed from data in the time period covered by the MEI, 1875 to present.  It is a naive Bayes model.  I wish to extend that model forward in time.  Thus I compute the statistical breaks over the time period where the model is computed, and must use the same breaks going forward in time, else the model is inapplicable.
 A second issue is that I wish to be able to change the number of bands into which the data is sorted for the Bayes analysis.  Smaller bands show the existence of relationships very clearly but the corresponding forecasts are not high resolution.
+
 
 **the R routines in the repository**
 
