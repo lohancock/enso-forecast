@@ -8,7 +8,7 @@ This repository presents the R routines used for the preparation of a poster pre
 
 **the data in the repository**
 
-The hypothesis of the presentation was that ENSO could be predicted from astronomical ephemeris, namely the configuration of sun, moon, and Earth, plus sunspots.  This repository stores those datthe asets as they were when I used them:  
+The hypothesis of the presentation was that ENSO could be predicted from astronomical ephemeris, namely the configuration of sun, moon, and Earth, plus sunspots.  This repository stores those datasets as they were when I used them:  
 
 - a time series of ENSO, for which I used the multivariate ENSO index prepared and updated by NOAA, called X
 - ephemeris of the Moon from JPL, called X
