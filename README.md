@@ -17,10 +17,10 @@ The hypothesis of the presentation was that ENSO could be predicted from astrono
 
 **the R routines in the repository**
 
+*datablocks.R*
+
 The datasets were read into data blocks for analysis.  The key issue here is that the model is developed from data in the time period covered by the MEI, 1875 to present.  It is a naive Bayes model.  I wish to extend that model forward in time.  Thus I compute the statistical breaks over the time period where the model is computed, and must use the same breaks going forward in time, else the model is inapplicable.
 A second issue is that I wish to be able to change the number of bands into which the data is sorted for the Bayes analysis.  Smaller bands show the existence of relationships very clearly but the corresponding forecasts are not high resolution.
-
-*datablocks.R*
 
 Taking these two issues into consideration, it is necessary to break out the original data into bands and store the corresponding break points each time new bands are tried - and then to use those breaks for the future datasets (ephemeris, assumed sunspot time series).  The R routine datablocks.R does all that
 
