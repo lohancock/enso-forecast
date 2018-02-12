@@ -1,11 +1,11 @@
 # enso-forecast
 
-
+#
 **trying out a planetary ring system to predict enso**
 
 This repository presents the R routines used for the preparation of a poster presentation, **Trying out a planetary ring system to predict ENSO** for the annual meeting of the American Meteorologial Society in Austin, Texas, 2018. https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
 
-
+#
 **the data in the repository**
 
 The hypothesis of the presentation was that ENSO could be predicted from astronomical ephemeris, namely the configuration of sun, moon, and Earth, plus sunspots.  This repository stores those datasets as they were when I used them:  
