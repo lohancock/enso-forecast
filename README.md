@@ -4,11 +4,9 @@
 
 This repository presents the R routines used for the preparation of a poster presentation for the annual meeting of the American Meteorologial Society in Austin, Texas, 2018. https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
 
-This repository provides the data and R routines used to prepare figures on the poster https://ams.confex.com/ams/98Annual/webprogram/Handout/Paper321391/PlanetaryRingSystemForENSOPredictionJan2018.pdf
-
 **the data**
 
-The poster hypothesis was that ENSO could be predicted from astronomical ephemeris, namely the configuration of sun, moon, and Earth, plus sunspots.  This repository stores those datthe asets as they were when I used them:  
+The hypothesis of the presentation was that ENSO could be predicted from astronomical ephemeris, namely the configuration of sun, moon, and Earth, plus sunspots.  This repository stores those datthe asets as they were when I used them:  
 
 - a time series of ENSO, for which I used the multivariate ENSO index prepared and updated by NOAA, called X
 - ephemeris of the Moon from JPL, called X
