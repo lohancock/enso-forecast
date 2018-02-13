@@ -2,7 +2,7 @@
 
 #
 **trying out a planetary ring system to predict enso**
-
+# 
 This repository presents the R routines used for the preparation of a poster presentation, **Trying out a planetary ring system to predict ENSO** for the annual meeting of the American Meteorologial Society in Austin, Texas, 2018. https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
 
 #
@@ -21,6 +21,7 @@ The hypothesis of the presentation was that ENSO could be predicted from astrono
 *datablocks.R*
 
 This file begins with a reminder to setwd to the directory which contains the data files:  The R routines are written expecting to find all data files in the working directory.
+
 This file then includes library calls at the top which indicate what packages are needed outside base R.  
 This file then sets the number of bands into which each variable will be cut for the Bayes analysis.  This affects the appearance of the graphics that will be prepared from these data blocks.
 # 
