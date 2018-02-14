@@ -3,7 +3,7 @@
 #
 **trying out a planetary ring system to predict enso**
 # 
-This repository presents data and R code used to prepare the poster presentation, **Trying out a planetary ring system to predict ENSO** presented at the annual meeting of the American Meteorologial Society in Austin, Texas, 2018.  The poster is linked within the below presentation page:   https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
+This repository presents data and R code used to prepare the poster presentation, **Trying out a planetary ring system to predict ENSO** which was presented at the annual meeting of the American Meteorologial Society in Austin, Texas, 2018.  The poster is linked within the below presentation page:   https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
 
 #
 **data**
