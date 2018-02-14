@@ -23,7 +23,7 @@ This repository presents data and R code used to prepare the poster presentation
 - Code sets values that determine the number of bands into which each variable will be cut for the Bayes analysis.  
 - Datasets are then read into data blocks for analysis.  
 
-  The reason there are different blocks is that the underlying datasets have different availability.  MEI, extended MEI, sunspots,  Schatten sunspot group count, and astronomical ephemerides.  The future is a time block of its own where assumptions are made about sunspots.
+  The reason there are different blocks is that there is varying availability over time for the predictor data:  MEI, extended MEI, sunspots,  Schatten sunspot group count, and astronomical ephemerides.  The Schatten group number was not used in the poster, but a block was dedicated to assemblng data that match its time frame.  In addition, the future is a time block of its own where assumptions are made about sunspots.
 
   The first data block is the most important:  The block 1875 to 2016 has data available in all categories so it is used to develop the predictive model that can then be applied to other time blocks.  The breaks calculated as bands are prepared are also saved so that other blocks can be broken out into the same bands, ensuring the model is applicable.  
   
