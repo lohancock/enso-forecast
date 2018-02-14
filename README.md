@@ -19,8 +19,8 @@ This repository presents data and R code used to prepare the poster presentation
 *datablocks.R*
 
 - Code begins with a reminder to **setwd** to the directory which contains the data files because the read commands expect to find data in the working directory.
-- Code lists library calls for needed packages outside base R.  
-- Code sets values that determine the number of bands into which each variable will be cut for the Bayes analysis.  
+- Code then lists **require** calls for needed packages outside base R.  
+- Code then assigns values that determine the number of bands into which each variable will be cut for the Bayes analysis.  These assignments are often changed.  (This script should better have been turned into a function and these parameters its arguments.)
 - Datasets are then read into data blocks for analysis.  
 
   The reason there are different blocks is that there is varying availability over time for the predictor data:  MEI, extended MEI, sunspots,  Schatten sunspot group count, and astronomical ephemerides.  The Schatten group number was not used in the poster, but a block was dedicated to assemblng data that match its time frame.  In addition, the future is a time block of its own where assumptions are made about sunspots.
