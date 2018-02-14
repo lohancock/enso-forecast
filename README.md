@@ -23,7 +23,9 @@ This repository presents data and R code used to prepare the poster presentation
 - Code sets values that determine the number of bands into which each variable will be cut for the Bayes analysis.  
 - Datasets are then read into data blocks for analysis.  
 
-  The first is the most important:  The block 1875 to 2016 is used to develop the predictive model that can then be applied to other time blocks.  The breaks calculated as bands are prepared are also saved so that other blocks can be broken out into the same bands, ensuring the model is applicable.  
+  The reason there are different blocks is that the underlying datasets have different availability.  MEI, extended MEI, sunspots,  Schatten sunspot group count, and astronomical ephemerides.  The future is a time block of its own where assumptions are made about sunspots.
+
+  The first data block is the most important:  The block 1875 to 2016 has data available in all categories so it is used to develop the predictive model that can then be applied to other time blocks.  The breaks calculated as bands are prepared are also saved so that other blocks can be broken out into the same bands, ensuring the model is applicable.  
   
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
