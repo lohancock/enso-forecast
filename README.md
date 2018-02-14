@@ -8,10 +8,11 @@ This repository presents data and R code used to prepare the poster presentation
 #
 **data**
 
-- a time series of ENSO, namely the multivariate ENSO index from NOAA.  URL is on the poster.  The download stored here and called by the R code is called MEI_1950_Dec2016.txt 
-- ephemeris of the Moon from JPL, called X
-- ephemeris of the Earth from JPL, called X
-- time series of sunspots from SIDC, called X
+- time series of the multivariate ENSO index (from NOAA).  URL for download is on the poster.
+- ephemeris of the Moon from JPL Horizons system.  Parameters of the download are preserved as top lines of the file.
+- ephemeris of the Earth from JPL,  Parameters of the download are preserved as top lines of the file.
+- time series of sunspots from SIDC.  From http://www.sidc.be/silso/datafiles
+- time series of Schatten sunspot group number, where the annual series is interpolated with constant values.  This time series is not actually used for the presentation so the defects in approach do not matter.  It is supplied here because the code expects it.
 
 #     
 **R code**
