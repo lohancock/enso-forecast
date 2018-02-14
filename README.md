@@ -15,7 +15,7 @@ This repository presents data and R code used to prepare the poster presentation
 - time series of Schatten sunspot group number, where the annual series is interpolated with constant values.  This time series is not actually used for the presentation so the defects in approach do not matter.  It is supplied here because the code expects it.
 
 #     
-**R code**
+**code**
 
 *datablocks.R*
 
