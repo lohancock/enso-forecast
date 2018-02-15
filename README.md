@@ -34,7 +34,7 @@ This repository presents data and R code used to prepare the poster presentation
 
 **Middle Panel**
 
-*Austin_Poster_3Part_TS_Middle Panel.R
+*Austin_Poster_3Part_TS_Middle Panel.R*
 
 This code produces the time series on the middle panel, panel 3, of the Austin poster.  To make those figures, begin with datablocks.R, using the following parameters to achieve the same look as the Austin poster:
 - mein <- 75 
