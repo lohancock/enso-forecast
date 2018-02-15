@@ -33,7 +33,8 @@ This repository presents data and R code used to prepare the poster presentation
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
 **Middle Panel**
-*Wide_3Part_TS_MEI_Moriarty_Model_Austin.R
+
+*Austin_Poster_3Part_TS_Middle Panel.R
 
 This code produces the time series on the middle panel, panel 3, of the Austin poster.  To make those figures, begin with datablocks.R, using the following parameters to achieve the same look as the Austin poster:
 - mein <- 75 
