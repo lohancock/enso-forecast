@@ -32,6 +32,21 @@ This repository presents data and R code used to prepare the poster presentation
   
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
+**Middle Panel**
+*Wide_3Part_TS_MEI_Moriarty_Model_Austin.R
+
+This code produces the time series on the middle panel, panel 3, of the Austin poster.  To make those figures, begin with datablocks.R, using the following parameters to achieve the same look as the Austin poster:
+- mein <- 75 
+- lout2 <- 49 
+- lout3 <- 13 
+- lout4 <- 13 
+- lout5 <- 13 
+- loutApsides <- 49 
+
+Then run this routine.  It saves on disk three PNG files, each 8 inches wide and 3 high.  You can change that of course.
+
+
+
 *Panels*
 
 Panel 3 of the poster shows the relationship between the multivariate ENSO index and each of the six variables used as predictors.  These figures are produced in the routine XX.  This particular appearance requires having previously run datablocks.R with assignments YYYYY.
