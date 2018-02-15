@@ -32,7 +32,6 @@ This repository presents data and R code used to prepare the poster presentation
   
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
-**Middle Panel**
 
 *Austin_Poster_3Part_TS_Middle Panel.R*
 
