@@ -53,6 +53,14 @@ This code produces the time series on the middle panel, panel 3, of the Austin p
 
 Then run this routine.  It saves on disk three PNG files, each 8 inches wide and 3 high.  You can change that of course.
 
+*austin_panel5_nearfin.R*
+
+This routine is used to output members of the forecast ensemble.
+
+*make_ensemble.R*
+
+Despite its name this is not an R routine - it is a set of notes describing how to make the ensemble.
+
 
 
 *Panels*
