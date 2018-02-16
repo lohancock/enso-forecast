@@ -18,7 +18,7 @@ The flow is as follows:
 - Two files:  **ephemeris_moon_1600_2030.txt** and **horizons_orbitalelementsofmoon4.txt** provide ephemerides of the Moon from JPL Horizons system.  Parameters of the download are preserved as top lines of the files.   They have different time frames and might have different orbital elements.  There are two because in preparing the first datablocks I did not realize I would later make data blocks with wider time frames.  I did not want to go back and rewrite working code so I left the earlier code linked to a shorter data file.
 - Two files:  **horizons_eartheclipticlatlong.txt** and **horizons_eartheclipticlatlong_LONG.txt** provide ephemerides of the Earth from JPL.
 - The file **monthly_sunspots.csv** provides time series of sunspots from SIDC.  From http://www.sidc.be/silso/datafiles
-- The file **  ** provides time series of Schatten sunspot group number, where the annual series is interpolated with constant values.  This time series is not actually used for the presentation so the defects in approach do not matter.  It is supplied here because the code expects it.
+- The file **schatten_extrapolated.txt** provides time series of Schatten sunspot group number, where the annual series is interpolated with constant values.  This time series is not actually used for the presentation so the defects in approach do not matter.  It is supplied here because the code expects it.
 
 #     
 **code**
