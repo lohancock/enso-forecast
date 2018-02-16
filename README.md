@@ -8,8 +8,8 @@ This repository presents data and R code used to prepare the poster presentation
 The flow is as follows:
 
 - Put all data and code into a single directory.  Suppose it is called 'enso'.  Then set the working directory, **setwd('~/enso')**
-- Source datablocks.R to assemble the data blocks. To change the way the output files look later on, edit the parameters at the top of datablocks.R.
-- Source **TimeSeriesPast.R** to prepare time series comparing the model to observed MEI from 1875 to 2016, such as the three time series figures from the middle panel, lower half of the poster.
+- Source **datablocks.R** to assemble the data blocks. To change the way the output files look later on, edit the parameters at the top of datablocks.R.
+- Source **TimeSeriesComparison.R** to prepare time series comparing the model to observed MEI from 1875 to 2016, such as the three time series figures from the middle panel, lower half of the poster.
 
 #
 **data**
