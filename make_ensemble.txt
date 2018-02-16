@@ -1,0 +1,282 @@
+# This is not an R script. It is a set of notes.  The notes are inconsistent and they undertake tasks that are not necessary.  I hope they are indicative and useful.  
+
+
+# Run datablocks.R using the following parameters:
+mein <- 75 # 
+lout2 <- 49 # number of bins for omega plus 1
+lout3 <- 13 # number of bins for for solarmo plus 1
+lout4 <- 13 # number of bins for sunspots/GN plus 1
+lout5 <- 13 # number of bins for moonmonths plus 1
+loutApsides <- 49 # 
+
+In datablocks, set:
+ss7 [12:36] <- c(26.4, 25.1,  23.8,  22.5,  21.3, 20.2,  19.1, 18.0,  17.0, 16.0,  15.1, 14.2, 13.3,  12.5,  11.8,  11.0, 10.3,   9.7,   9.0, 8.4, 7.9,  7.3, 6.8,  6.4, 5.9)             
+# use NASA projection from https://solarscience.msfc.nasa.gov/images/ssn_predict.txt
+ss7[12:18] <- c(6,6,6,6,6,6,6) # Here suppose the last value of Nov 2017 persists to mid 2018.
+
+
+datablocks.R
+austin_panel5_nearfin.R
+n1<-test_forecast_ensemble
+save(n1,file="n1.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+n2<-test_forecast_ensemble
+save(n2,file="n2.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+n3<-test_forecast_ensemble
+save(n3,file="n3.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+n4<-test_forecast_ensemble
+save(n4,file="n4.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+n5<-test_forecast_ensemble
+save(n5,file="n5.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+n<-test_forecast_ensemble
+save(n,file="n6.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+nnn<-test_forecast_ensemble
+save(nnn,file="n7.Rdata")
+
+datablocks.R 
+austin_panel5_nearfin.R
+nnn<-test_forecast_ensemble
+save(nnn,file="n8.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="n9.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="n10.Rdata")
+
+Change the sunspot assumption:
+  ss7[12:36] <- c(6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6) # Here suppose the last value of Nov 2017 persists to mid 2018.
+
+datablocks.R 
+austin_panel5_nearfin.R
+nnn<-test_forecast_ensemble
+save(nnn,file="cold1.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold2.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold3.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold4.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold5.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold6.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold7.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold8.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold9.Rdata")
+
+nnn<-test_forecast_ensemble
+save(nnn,file="cold10.Rdata")
+
+# Try warmer sunspots (just for 2018-2020) I think it is
+ss7[12:36] <- c(25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25) # Here suppose the last value of Nov 2017 persists to mid 2018.
+
+# lukewarm 1, 2, 3
+
+nnn<-test_forecast_ensemble
+save(nnn,file="lukewarm4.Rdata")
+
+5, 6, 7, 8, 9, 10
+
+# To make it:
+
+startup.R
+datablocks.R # (actually that was unnecessary)
+
+load("lukewarm1.Rdata")
+data1 <- nnn
+
+load("lukewarm2.Rdata")
+data2 <- nnn
+
+load("lukewarm3.Rdata")
+data3 <- nnn
+
+load("lukewarm4.Rdata")
+data4 <- nnn
+
+load("lukewarm5.Rdata")
+data5 <- nnn
+
+load("lukewarm6.Rdata")
+data6 <- nnn
+
+load("lukewarm7.Rdata")
+data7 <- nnn
+
+load("lukewarm8.Rdata")
+data8 <- nnn
+
+load("lukewarm9.Rdata")
+data9 <- nnn
+
+load("lukewarm10.Rdata")
+data10 <- nnn
+
+
+p1<-ggplot(data1,aes(meidate,MEI_Sample))  # this provides scales
+p2<-p1+geom_line(data=data1,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+hilimit<-colnames(data1)[dim(data1)[2]-2]
+p3<-p2+geom_line(data=data1,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+p15<-p3  +geom_point(data=data_block_df,aes(edate,MEI))
+pfuture <- p15+xlim(data1$meidate[3170],data1$meidate[3288])
+plot2017 <- geom_point(data=newmei,aes(edate,MEI),size=3)
+pstart <- pfuture + plot2017
+
+plotd2blue <- geom_line(data=data2,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd2red <- geom_line(data=data2,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart2 <- pstart + plotd2blue + plotd2red
+
+plotd3blue <- geom_line(data=data3,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd3red <- geom_line(data=data3,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart3 <- pstart2 + plotd3blue + plotd3red
+
+plotd4blue <- geom_line(data=data4,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd4red <- geom_line(data=data4,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart4 <- pstart3 + plotd4blue + plotd4red
+
+plotd5blue <- geom_line(data=data5,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd5red <- geom_line(data=data5,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart5 <- pstart4 + plotd5blue + plotd5red
+
+plotd6blue <- geom_line(data=data6,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd6red <- geom_line(data=data6,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart6 <- pstart5 + plotd6blue + plotd6red
+
+plotd7blue <- geom_line(data=data7,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd7red <- geom_line(data=data7,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart7 <- pstart6 + plotd7blue + plotd7red
+
+plotd8blue <- geom_line(data=data8,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd8red <- geom_line(data=data8,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart8 <- pstart7 + plotd8blue + plotd8red
+
+plotd9blue <- geom_line(data=data9,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd9red <- geom_line(data=data9,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart9 <- pstart8 + plotd9blue + plotd9red
+
+plotd10blue <- geom_line(data=data10,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd10red <- geom_line(data=data10,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart10 <- pstart9 + plotd10blue + plotd10red
+ggsave("whatsaheadss25.png",width=8,height=3,units=c("in"))
+
+pstart10 + xlim(data1$meidate[3180],data1$meidate[3230])
+ggsave("whatsaheadNEARss25.png",width=8,height=3,units=c("in"))
+
+
+# call datablock again and then - 
+
+load("cold1.Rdata")
+data1 <- nnn
+
+load("cold2.Rdata")
+data2 <- nnn
+
+load("cold3.Rdata")
+data3 <- nnn
+
+load("cold4.Rdata")
+data4 <- nnn
+
+load("cold5.Rdata")
+data5 <- nnn
+
+load("cold6.Rdata")
+data6 <- nnn
+
+load("cold7.Rdata")
+data7 <- nnn
+
+load("cold8.Rdata")
+data8 <- nnn
+
+load("cold9.Rdata")
+data9 <- nnn
+
+load("cold10.Rdata")
+data10 <- nnn
+
+
+p1<-ggplot(data1,aes(meidate,MEI_Sample))  # this provides scales
+p2<-p1+geom_line(data=data1,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+hilimit<-colnames(data1)[dim(data1)[2]-2]
+p3<-p2+geom_line(data=data1,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+p15<-p3  +geom_point(data=data_block_df,aes(edate,MEI))
+pfuture <- p15+xlim(data1$meidate[3170],data1$meidate[3288])
+plot2017 <- geom_point(data=newmei,aes(edate,MEI),size=3)
+pstart <- pfuture + plot2017
+
+plotd2blue <- geom_line(data=data2,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd2red <- geom_line(data=data2,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart2 <- pstart + plotd2blue + plotd2red
+
+plotd3blue <- geom_line(data=data3,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd3red <- geom_line(data=data3,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart3 <- pstart2 + plotd3blue + plotd3red
+
+plotd4blue <- geom_line(data=data4,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd4red <- geom_line(data=data4,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart4 <- pstart3 + plotd4blue + plotd4red
+
+plotd5blue <- geom_line(data=data5,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd5red <- geom_line(data=data5,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart5 <- pstart4 + plotd5blue + plotd5red
+
+plotd6blue <- geom_line(data=data6,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd6red <- geom_line(data=data6,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart6 <- pstart5 + plotd6blue + plotd6red
+
+plotd7blue <- geom_line(data=data7,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd7red <- geom_line(data=data7,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart7 <- pstart6 + plotd7blue + plotd7red
+
+plotd8blue <- geom_line(data=data8,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd8red <- geom_line(data=data8,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart8 <- pstart7 + plotd8blue + plotd8red
+
+plotd9blue <- geom_line(data=data9,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd9red <- geom_line(data=data9,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart9 <- pstart8 + plotd9blue + plotd9red
+
+plotd10blue <- geom_line(data=data10,aes(meidate,mei_pr_low1),color="dark blue") # the low end limit
+plotd10red <- geom_line(data=data10,aes_string(x="meidate",y=hilimit,   alpha=1/20) , color="red") #
+pstart10 <- pstart9 + plotd10blue + plotd10red
+
+ggsave("whatsaheadss6.png",width=8,height=3,units=c("in"))
+
+pstart10 + xlim(data1$meidate[3180],data1$meidate[3230])
+ggsave("whatsaheadNEARss6.png",width=8,height=3,units=c("in"))
+
+
+
+
+
+
