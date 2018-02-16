@@ -44,6 +44,7 @@ The flow is as follows:
 *TimeSeriesComparison.R*
 
   This code produces the time series on the middle panel, panel 3, of the Austin poster.  To make those figures, begin with datablocks.R, using the following parameters to achieve the same look as the Austin poster:
+  
 - mein <- 75 
 - lout2 <- 49 
 - lout3 <- 13 
@@ -51,7 +52,7 @@ The flow is as follows:
 - lout5 <- 13 
 - loutApsides <- 49 
 
-T  hen run this routine.  It saves on disk three PNG files, each 8 inches wide and 3 high.  You can change that of course.
+  Then run this routine.  It saves on disk three PNG files, each 8 inches wide and 3 high.  You can change that of course.
 
 *austin_panel5_nearfin.R*
 
