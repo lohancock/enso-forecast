@@ -14,7 +14,7 @@ The flow is as follows:
 #
 **data**
 
-- time series of the multivariate ENSO index (from NOAA).  
+- Two files:  MEI_ext_1871_2005.txt and   comprise time series of the multivariate ENSO index (from NOAA).
 - ephemeris of the Moon from JPL Horizons system.  Parameters of the download are preserved as top lines of the file.
 - ephemeris of the Earth from JPL,  Parameters of the download are preserved as top lines of the file.
 - time series of sunspots from SIDC.  From http://www.sidc.be/silso/datafiles
