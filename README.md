@@ -7,15 +7,14 @@ This repository presents data and R code used to prepare the poster presentation
 
 The flow is as follows:
 
-- Put all data and code into a single directory.  Suppose it is called 'enso'.  Then set the working directory there:
-
---setwd('~/enso')
-
+- Put all data and code into a single directory.  Suppose it is called 'enso'.  Then set the working directory, **setwd('~/enso')**
+- Assemble the data blocks.  For this, edit the parameters at the top of datablocks.R and then source datablocks.R.
+- To prepare time series comparing the model to observed MEI from 1875 to 2016, run **TS_Past.R** which will prepare the three time series figures from the middle panel, lower half of the poster.
 
 #
 **data**
 
-- time series of the multivariate ENSO index (from NOAA).  URL for download is on the poster.
+- time series of the multivariate ENSO index (from NOAA).  
 - ephemeris of the Moon from JPL Horizons system.  Parameters of the download are preserved as top lines of the file.
 - ephemeris of the Earth from JPL,  Parameters of the download are preserved as top lines of the file.
 - time series of sunspots from SIDC.  From http://www.sidc.be/silso/datafiles
