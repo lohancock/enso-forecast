@@ -55,13 +55,11 @@ Then run this routine.  It saves on disk three PNG files, each 8 inches wide and
 
 *austin_panel5_nearfin.R*
 
-This routine is used to output members of the forecast ensemble.
+This routine is used to output a forecast.
 
-*make_ensemble.R*
+*make_ensemble.txt*
 
-Despite its name this is not an R routine - it is a set of notes describing how to make the ensemble.
-
-
+This is a set of notes describing how to make the ensemble.  Essentially it is a matter of setting an assumption about future sunspots, running datablocks, then running the routine austin_panel5_nearfin.R in order to output a single pair of red and blue forecasts, and saving that.  Doing all of that ten times.  Plotting the resulting ensemble at high and low time resolution.  Then doing the whole set of ten again with a different assumption about sunspots.
 
 *Panels*
 
