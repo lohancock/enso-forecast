@@ -8,8 +8,10 @@ This repository presents data and R code used to prepare the poster presentation
 The flow is as follows:
 
 - Put all data and code into a single directory.  Suppose it is called 'enso'.  Then set the working directory, **setwd('~/enso')**
-- Source **datablocks.R** to assemble the data blocks. To change the way the output files look later on, edit the parameters at the top of datablocks.R.
-- Source **TimeSeriesComparison.R** to prepare time series comparing the model to observed MEI from 1875 to 2016, such as the three time series figures from the middle panel, lower half of the poster.
+- Source **datablocks.R** to assemble the data blocks. Note:  to change the way the output files look later on, edit the parameters at the top of datablocks.R.
+- Option 3 - Prepare a comparison between model and data over the period 1875 to 2016, similar to the time series found in the lower half of the middle panel of the Austin poster.  For this, source **TimeSeriesComparison.R** which will save three PNG files.  Note they are each 8 inches wide.  Note also that if you copy and paste the file in, rather than sourcing it, then it will print the files to your output screen so you can look at them (and it will save these).
+- Option 4 - Prepare an ensemble forecast, similar to that found on panel 4 of the Austin poster.
+
 
 #
 **data**
@@ -39,7 +41,7 @@ The flow is as follows:
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
 
-*Austin_Poster_3Part_TS_Middle Panel.R*
+*TimeSeriesComparison.R*
 
 This code produces the time series on the middle panel, panel 3, of the Austin poster.  To make those figures, begin with datablocks.R, using the following parameters to achieve the same look as the Austin poster:
 - mein <- 75 
