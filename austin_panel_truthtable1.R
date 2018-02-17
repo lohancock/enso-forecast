@@ -1,5 +1,7 @@
+require(ggplot2)
+
 #  Fin:  Use These:
-# mein <-30  # use 5 for astro-only raster, use 13 for prediction.  number of bins for MEI plus 1.  Use 3 bins or more. Same num bins for meilag.
+# mein <-12  # use 5 for astro-only raster, use 13 for prediction.  number of bins for MEI plus 1.  Use 3 bins or more. Same num bins for meilag.
 #lout2 <- 49 # number of bins for omega plus 1
 #lout3 <- 13 # number of bins for for solarmo plus 1
 #lout4 <- 13 # number of bins for sunspots/GN plus 1
