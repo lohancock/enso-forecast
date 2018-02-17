@@ -42,6 +42,12 @@ The flow is as follows:
   
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
+
+#   
+**austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**
+
+  These generate the truth tables presented as graphics at the top of the middle panel of the Austin poster.  One is the truth table for the 6-variable model predictions of the multivariate ENSO index; it shows it graphically - bluer squares are the less-occupied squares on a table, while white squares are more occupied. The white spine running along the diagonal shows that the model has skill.  To the right on the poster is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  **The point is that the relationship still exists - a white spine runs along the diagonal,** although contrast is lower  The appearance of the figures as on the poster depends on having previously run datablocks.R using mein set to 12 or 13.  Else the figured is a bit cluttered although it shows the same thing.
+
 # 
 **TimeSeriesComparison.R**
 
@@ -75,10 +81,6 @@ The flow is as follows:
   
   In the end, two panels present a forecast for the assumption that SIDC monthly sunspot count will be a constant value 6 going forward; the two panel below that, that SIDC monthly sunspot count will be 25 going forward.  Each presents a ten-member ensemble.  That is, the forecast is made ten times, each time based on a random draw of 80 percent of available data 1875 to 2016.  The forecasts are presented at high time resolution and low.  Each presentation includes a few years of actual MEI data (which was used to build the model), simply to train the eye. Each also includes the year 2017 which was not used to build the model but is "forecast" since it is the future from the point of view of the model.  Observations are also provided for 2017 but using different symbols.  Each predicton is presented at high time resolution and low.  
 
-#   
-**austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**
-
-  These generate the truth tables presented as graphics at the top of the middle panel of the Austin poster.  One is the truth table for the 6-variable model predictions of the multivariate ENSO index; it shows it graphically - bluer squares are the less-occupied squares on a table, while white squares are more occupied. The white spine running along the diagonal shows that the model has skill.  To the right on the poster is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  **The point is that the relationship still exists - a white spine runs along the diagonal,** although contrast is lower  The appearance of the figures as on the poster depends on having previously run datablocks.R using mein set to 12 or 13.  Else the figured is a bit cluttered although it shows the same thing.
 
 
 
