@@ -64,10 +64,7 @@ The flow is as follows:
   
   When complete this presents a time series in which a time series of the predictive model is presented as a red line and a blue line, while the multivariate ENSO index 1875 to 2016 is presented as black dots. The red line presents a model run where prior MEI was taken as a constant value at the uppermost band.  The blue line presents a model run where prior MEI is taken as a constant value at the lowest band.  MEI should therefore fall in between the two.  Despite the ambiguities as some points have no prediction at all due to data insufficiency, the prediction is clearly made overall and a comparison is possible in my opinion. 
 
-# 
-**austin_panel5_nearfin.R**
 
-  This routine is used to output a forecast.
 # 
 **make_ensemble.txt**
   
@@ -81,6 +78,9 @@ The flow is as follows:
   
   In the end, two panels present a forecast for the assumption that SIDC monthly sunspot count will be a constant value 6 going forward; the two panel below that, that SIDC monthly sunspot count will be 25 going forward.  Each presents a ten-member ensemble.  That is, the forecast is made ten times, each time based on a random draw of 80 percent of available data 1875 to 2016.  The forecasts are presented at high time resolution and low.  Each presentation includes a few years of actual MEI data (which was used to build the model), simply to train the eye. Each also includes the year 2017 which was not used to build the model but is "forecast" since it is the future from the point of view of the model.  Observations are also provided for 2017 but using different symbols.  Each predicton is presented at high time resolution and low.  
 
+# 
+**austin_panel5_nearfin.R**
 
+  This routine is used to output a forecast.  It is used as indicated in the notes, **make_ensemble.txt"
 
 
