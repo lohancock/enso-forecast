@@ -27,7 +27,7 @@ The flow is as follows:
 #     
 **code**
 
-*datablocks.R*
+**datablocks.R**
 
 - Code begins with a reminder to **setwd** to the directory which contains the data files because the read commands expect to find data in the working directory.
 - Code then lists **require** calls for needed packages outside base R.  
@@ -42,8 +42,8 @@ The flow is as follows:
   
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
 
-
-*TimeSeriesComparison.R*
+# 
+**TimeSeriesComparison.R**
 
   This code produces the time series on the middle panel, panel 3, of the Austin poster.  To make those figures, begin with datablocks.R, using the following parameters to achieve the same look as the Austin poster:
   
@@ -58,19 +58,27 @@ The flow is as follows:
   
   When complete this presents a time series in which a time series of the predictive model is presented as a red line and a blue line, while the multivariate ENSO index 1875 to 2016 is presented as black dots. The red line presents a model run where prior MEI was taken as a constant value at the uppermost band.  The blue line presents a model run where prior MEI is taken as a constant value at the lowest band.  MEI should therefore fall in between the two.  Despite the ambiguities as some points have no prediction at all due to data insufficiency, the prediction is clearly made overall and a comparison is possible in my opinion. 
 
-
-*austin_panel5_nearfin.R*
+# 
+**austin_panel5_nearfin.R**
 
   This routine is used to output a forecast.
-
-*make_ensemble.txt*
-
-  This is a set of notes describing how to make the ensemble.  Essentially it is a matter of setting an assumption about future sunspots, running datablocks, then running the routine austin_panel5_nearfin.R in order to output a single pair of red and blue forecasts, and saving that.  Doing all of that ten times.  Plotting the resulting ensemble at high and low time resolution.  Then doing the whole set of ten again with a different assumption about sunspots.
+# 
+**make_ensemble.txt**
   
-*austin_panel_truthable1.R* and *austin_panel_truthtable2_R.*
+  This is a set of notes describing how to make an ensemble forecast of future MEI.  The procedure describes 
+  
+- setting an assumption about future sunspots, running datablocks to assemble that into quantiles ready for Bayes, 
+- running the routine austin_panel5_nearfin.R in order to output a single pair of red and blue forecasts, and saving that
+- doing all of that ten times
+- plotting the resulting ensemble at high and low time resolution
+- then doing all of that again with a different assumption about sunspots.
+  
+  In the end, two panels present a forecast for the assumption that SIDC monthly sunspot count will be a constant value 6 going forward; the two panel below that, that SIDC monthly sunspot count will be 25 going forward.  Each presents a ten-member ensemble.  That is, the forecast is made ten times, each time based on a random draw of 80 percent of available data 1875 to 2016.  The forecasts are presented at high time resolution and low.  Each presentation includes a few years of actual MEI data (which was used to build the model), simply to train the eye. Each also includes the year 2017 which was not used to build the model but is "forecast" since it is the future from the point of view of the model.  Observations are also provided for 2017 but using different symbols.  Each predicton is presented at high time resolution and low.  
+
+#   
+**austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**
 
   These generate the truth tables presented as graphics at the top of the middle panel of the Austin poster.  One is the truth table for the 6-variable model predictions of the multivariate ENSO index; it shows it graphically - bluer squares are the less-occupied squares on a table, while white squares are more occupied. The white spine running along the diagonal shows that the model has skill.  To the right on the poster is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  **The point is that the relationship still exists - a white spine runs along the diagonal,** although contrast is lower  The appearance of the figures as on the poster depends on having previously run datablocks.R using mein set to 12 or 13.  Else the figured is a bit cluttered although it shows the same thing.
 
 
 
-Panel 5 presents an MEI forecast.  Two panels present a forecast for the assumption that SIDC monthly sunspot count will be a constant value 6 going forward; the two panel below that, that SIDC monthly sunspot count will be 25 going forward.  In this case, the forecast is made ten times (each time based on a random draw of 80 percent of available data).  Each includes a few years of MEI data used to build the model (up to 2016), plus the year 2017 which was not used to build the model but is provided for comparison.  Each predicton is presented at high time resolution and low.  These figures are using the routine XXX.  This particular appearance requires having previously run datablocks.R with assignments YYY.  The file WWW.txt provides some additional details on the setup of the multiple instances.
