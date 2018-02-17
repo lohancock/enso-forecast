@@ -61,6 +61,10 @@ The flow is as follows:
 *make_ensemble.txt*
 
   This is a set of notes describing how to make the ensemble.  Essentially it is a matter of setting an assumption about future sunspots, running datablocks, then running the routine austin_panel5_nearfin.R in order to output a single pair of red and blue forecasts, and saving that.  Doing all of that ten times.  Plotting the resulting ensemble at high and low time resolution.  Then doing the whole set of ten again with a different assumption about sunspots.
+  
+*austin_panel_truthable1.R* and *austin_panel_truthtable2_R.*
+
+  These generate the truth tables presented as graphics at the top of the middle panel of the Austin poster.  One is the truth table for the 6-variable model predictions of the multivariate ENSO index; it shows it graphically - bluer squares are the less-occupied squares on a table, while white squares are more occupied. The white spine running along the diagonal shows that the model has skill.  To the right on the poster is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  **The point is that the relationship still exists - a white spine runs along the diagonal,** although contrast is lower  The appearance of the figures as on the poster depends on having previously run datablocks.R using mein set to 12 or 13.  Else the figured is a bit cluttered although it shows the same thing.
 
 *Panels*
 
