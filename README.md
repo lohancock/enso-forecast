@@ -9,9 +9,10 @@ The flow is as follows:
 
 - Put all data and code into a single directory.  Suppose it is called 'enso'.  Then set the working directory, **setwd('~/enso')**
 - Source **datablocks.R** to clear the workspace and to assemble the data blocks. Note:  to change the way the output files look later on, edit the parameters at the top of datablocks.R.
-- Option 2 - Prepare graphical truth tables to show how well the model is doing.  For this, run **datablocks.R** using a low number for mein, such as 12 or 13.  Then run **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**  Note that these routines do a lot of things, which I have not removed from the code.  But each saves just one file on disk, respectively the two truth tables.  The reason it works this way is that the same code makes all the different graphics, but the final poster versions required different tuning of graphics, so I saved the same underlying code under many names.
-- Option 3 - Prepare a comparison between model and data over the period 1875 to 2016, similar to the time series found in the lower half of the middle panel of the Austin poster.  For this, first run **datablocks.R** using a high number for mein (25 to 70) and then source **TimeSeriesComparison.R** which will save three PNG files.  Note they are each 8 inches wide.  Note also that if you copy and paste the file in, rather than sourcing it, then it will print the files to your output screen so you can look at them (and it will save these).
-- Option 4 - Prepare an ensemble forecast, similar to that found on panel 4 of the Austin poster.
+- Panel 2 lower - XXXXXXXXXXXXXXXXXX TBD XXXXXXXXXXXXXXXXXX
+- Panel 3 upper - Prepare graphical truth tables to show how well the model is doing.  For this, run **datablocks.R** using a low number for mein, such as 12 or 13.  Then run **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**  Note that these routines do a lot of things, which I have not removed from the code.  But each saves just one file on disk, respectively the two truth tables.  The reason it works this way is that the same code makes all the different graphics, but the final poster versions required different tuning of graphics, so I saved the same underlying code under many names.
+- Panel 3 lower - Prepare a comparison between model and data over the period 1875 to 2016, similar to the time series found in the lower half of the middle panel of the Austin poster.  For this, first run **datablocks.R** using a high number for mein (25 to 70) and then source **TimeSeriesComparison.R** which will save three PNG files.  Note they are each 8 inches wide.  Note also that if you copy and paste the file in, rather than sourcing it, then it will print the files to your output screen so you can look at them (and it will save these).
+- Panel 4 - Prepare an ensemble forecast, similar to that found on panel 4 of the Austin poster.
 
 
 #
@@ -54,6 +55,9 @@ The flow is as follows:
 - loutApsides <- 49 
 
   Then run this routine.  It saves on disk three PNG files, each 8 inches wide and 3 high.  You can change that of course.
+  
+  When complete this presents a time series in which a time series of the predictive model is presented as a red line and a blue line, while the multivariate ENSO index 1875 to 2016 is presented as black dots. The red line presents a model run where prior MEI was taken as a constant value at the uppermost band.  The blue line presents a model run where prior MEI is taken as a constant value at the lowest band.  MEI should therefore fall in between the two.  Despite the ambiguities as some points have no prediction at all due to data insufficiency, the prediction is clearly made overall and a comparison is possible in my opinion. 
+
 
 *austin_panel5_nearfin.R*
 
@@ -67,12 +71,6 @@ The flow is as follows:
 
   These generate the truth tables presented as graphics at the top of the middle panel of the Austin poster.  One is the truth table for the 6-variable model predictions of the multivariate ENSO index; it shows it graphically - bluer squares are the less-occupied squares on a table, while white squares are more occupied. The white spine running along the diagonal shows that the model has skill.  To the right on the poster is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  **The point is that the relationship still exists - a white spine runs along the diagonal,** although contrast is lower  The appearance of the figures as on the poster depends on having previously run datablocks.R using mein set to 12 or 13.  Else the figured is a bit cluttered although it shows the same thing.
 
-*Panels*
 
-Panel 3 of the poster shows the relationship between the multivariate ENSO index and each of the six variables used as predictors.  These figures are produced in the routine XX.  This particular appearance requires having previously run datablocks.R with assignments YYYYY.
-
-Panel 4 of the poster at the top shows (left) the truth table for the 6-variable model predictions of the multivariate ENSO index.  It shows it graphically - bluer squares are less occupied, white squares are more occupied.  To the right is the truth table for a predictive model using the same variables except for one:  the prior value of MEI is not used as a predictor.  The point is that the relationship still exists - a white spine runs along the diagonal, although contrast is lower  These figures are produced in teh routine Xx.  This particular appearance requires having previously run datablocks.R with assignments YYYYY.
-
-Panel 4 then presents a time series in which a time series of the predictive model is presented as a red line and a blue line, while the multivariate ENSO index 1875 to 2016 is presented as black dots. The red line presents a model run where prior MEI was taken as a constant value at the uppermost band.  The blue line presents a model run where prior MEI is taken as a constant value at the lowest band.  MEI should therefore fall in between the two.  Despite the ambiguities as some points have no prediction at all due to data insufficiency, the prediction is clearly made overall and a comparison is possible in my opinion.  This time series 1875 to 2016 is produced in the routine XXX.  This particular appearance requires having previously run datablocks. R with assignments YYY.
 
 Panel 5 presents an MEI forecast.  Two panels present a forecast for the assumption that SIDC monthly sunspot count will be a constant value 6 going forward; the two panel below that, that SIDC monthly sunspot count will be 25 going forward.  In this case, the forecast is made ten times (each time based on a random draw of 80 percent of available data).  Each includes a few years of MEI data used to build the model (up to 2016), plus the year 2017 which was not used to build the model but is provided for comparison.  Each predicton is presented at high time resolution and low.  These figures are using the routine XXX.  This particular appearance requires having previously run datablocks.R with assignments YYY.  The file WWW.txt provides some additional details on the setup of the multiple instances.
