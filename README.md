@@ -9,7 +9,7 @@ Download all data and code from here into a single directory and remember to set
          
   For each graphic prepared, as a preliminary step run **datablocks.R** to clear the workspace and to set the number of bands parameters should be sliced into for the Bayes analysis.
         
-Note that the code for most of the graphics is two core routines, each with small changes made for the respective graphics.  
+Note that other than **datablocks.R** all the routines below are small variations on two core routines.  
      
 - Panel 2 lower graphics:  Visual representations of the model relationships between MEI and each predictor:  phase of the precession of lunar nodes, number of sunspots, phase of solar year, phase of eclipse year, phase of rotation of apsides, magnitude of the two-months-prior value of the MEI.  For the first five model relationships, use **austin_panel_ephemeris_rasters_pub.R**.  For the model relationship between MEI and two-months-prior MEI, use **austin_panel_truthtable_pub.R**.
 - Panel 3 upper - Graphical truth tables to find out whether the model has any skill.  For this, run **datablocks.R** using a low number for mein, such as 12 or 13.  Then run **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**  Note that these routines do a lot of things, which I have not removed from the code.  But each saves just one file on disk, respectively the two truth tables.  The reason it works this way is that the same code makes all the different graphics, but the final poster versions required different tuning of graphics, so I saved the same underlying code under many names.
