@@ -5,7 +5,7 @@
 # 
 This repository presents data and R code used to prepare the poster presentation, **Trying out a planetary ring system to predict ENSO** which was presented at the annual meeting of the American Meteorologial Society in Austin, Texas, 2018.  The poster is linked herein:   https://ams.confex.com/ams/98Annual/webprogram/Paper321391.html
 # 
-Download all data and code from here into a single directory and remember to set the working directory as a preliminary; for example, **setwd('~/enso')**  because the code expects to find the data in the working directory.
+Download all data and code from here into a single directory and remember to set the working directory as a preliminary; for example, **setwd('~/enso')**  This preliminary is needed because this code expects to find the data in the working directory.
          
   For each graphic prepared, as a preliminary step run **datablocks.R** to clear the workspace and to set the number of bands parameters should be sliced into for the Bayes analysis.
         
