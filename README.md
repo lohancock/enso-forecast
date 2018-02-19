@@ -7,8 +7,10 @@ This repository presents data and R code used to prepare the poster presentation
 
 The flow is as follows:
 
-- Put all data and code into a single directory.  Suppose it is called 'enso'.  Then set the working directory, **setwd('~/enso')**
-- Source **datablocks.R** to clear the workspace and to assemble the data blocks. Note:  to change the way the output files look later on, edit the parameters at the top of datablocks.R.
+- Download all data and code from here into a single directory, for example, ~/enso  
+- Remember to set the working directory; for example, **setwd('~/enso')**
+- For each graphic prepared, as a preliminary step run **datablocks.R** to clear the workspace and to set the number of bands parameters should be sliced into for the Bayes analysis.
+  - 
 - Panel 2 lower - XXXXXXXXXXXXXXXXXX TBD XXXXXXXXXXXXXXXXXX
 - Panel 3 upper - Prepare graphical truth tables to show how well the model is doing.  For this, run **datablocks.R** using a low number for mein, such as 12 or 13.  Then run **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**  Note that these routines do a lot of things, which I have not removed from the code.  But each saves just one file on disk, respectively the two truth tables.  The reason it works this way is that the same code makes all the different graphics, but the final poster versions required different tuning of graphics, so I saved the same underlying code under many names.
 - Panel 3 lower - Prepare a comparison between model and data over the period 1875 to 2016, similar to the time series found in the lower half of the middle panel of the Austin poster.  For this, first run **datablocks.R** using a high number for mein (25 to 70) and then source **TimeSeriesComparison.R** which will save three PNG files.  Note they are each 8 inches wide.  Note also that if you copy and paste the file in, rather than sourcing it, then it will print the files to your output screen so you can look at them (and it will save these).
