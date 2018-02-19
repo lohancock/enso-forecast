@@ -46,7 +46,7 @@ Note that other than **datablocks.R** all the routines below are small variation
 #  
 **austin_panel_ephemeris_rasters_pub.R** and **austin_panel_truthtable_pub.R.**
   
-TBD xxxxxxxxxxxxxxxxxxxxxx
+  These generate raster graphics depicting the model relationship between MEI and the six predictors.  The first routine presents the astronomical predictors; the second presents the relationship between MEI and lagged MEI.
 
 #   
 **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**
