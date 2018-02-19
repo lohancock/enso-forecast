@@ -9,7 +9,7 @@ Download all data and code from here into a single directory and remember to set
          
   For each graphic prepared, as a preliminary step run **datablocks.R** to clear the workspace and to set the number of bands parameters should be sliced into for the Bayes analysis.
         
-Note that the code for most of the graphics is the same core, with small changes made for the respective graphics.  
+Note that the code for most of the graphics is two core routines, each with small changes made for the respective graphics.  
      
 - Panel 2 lower graphics:  Visual representations of the model relationships between MEI and each predictor:  phase of the precession of lunar nodes, number of sunspots, phase of solar year, phase of eclipse year, phase of rotation of apsides, magnitude of the two-months-prior value of the MEI.  For the first five model relationships, use **austin_panel_ephemeris_rasters_pub.R**.  For the model relationship between MEI and two-months-prior MEI, use **austin_panel_truthtable_pub.R**.
 - Panel 3 upper - Graphical truth tables to find out whether the model has any skill.  For this, run **datablocks.R** using a low number for mein, such as 12 or 13.  Then run **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**  Note that these routines do a lot of things, which I have not removed from the code.  But each saves just one file on disk, respectively the two truth tables.  The reason it works this way is that the same code makes all the different graphics, but the final poster versions required different tuning of graphics, so I saved the same underlying code under many names.
@@ -43,7 +43,10 @@ Note that the code for most of the graphics is the same core, with small changes
   An aspect of using Bayes as a predictive model where the future predictors are constant values is that the approach fails if bands are completely empty.  For this reason, a future block is prepared with data going back in time so that the bands will not be empty.  However that future block is not used as a source of past data.
   
   Note that the breaks are calculated before the 80/20 breakout is made; for this reason, the bands used to calculate the model, which draw on the 80% selection, are not exactly equally occupied.  This is a consideration that weights the bands not quite equally.  One solution is not to do the 80/20 breakout - another is to run the process many times.  
-
+#  
+**austin_panel_ephemeris_rasters_pub.R** and **austin_panel_truthtable_pub.R.**
+  
+TBD xxxxxxxxxxxxxxxxxxxxxx
 
 #   
 **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**
@@ -83,6 +86,8 @@ Note that the code for most of the graphics is the same core, with small changes
 # 
 **austin_panel5_nearfin.R**
 
-  This routine is used to output a forecast.  It is used as indicated in the notes, **make_ensemble.txt"
+  This routine is used to output a forecast.  It is used as indicated in the notes, **make_ensemble.txt**
+  
+  
 
 
