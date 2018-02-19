@@ -8,8 +8,7 @@ This repository presents data and R code used to prepare the poster presentation
 The flow is as follows:
 
 - Download all data and code from here into a single directory, for example, ~/enso  
-- Remember to set the working directory; for example, **setwd('~/enso')**
-- For each graphic prepared, as a preliminary step run **datablocks.R** to clear the workspace and to set the number of bands parameters should be sliced into for the Bayes analysis.
+- Remember to set the working directory; for example, **setwd('~/enso')**  For each graphic prepared, as a preliminary step run **datablocks.R** to clear the workspace and to set the number of bands parameters should be sliced into for the Bayes analysis.
   - 
 - Panel 2 lower - XXXXXXXXXXXXXXXXXX TBD XXXXXXXXXXXXXXXXXX
 - Panel 3 upper - Prepare graphical truth tables to show how well the model is doing.  For this, run **datablocks.R** using a low number for mein, such as 12 or 13.  Then run **austin_panel_truthable1.R** and **austin_panel_truthtable2_R.**  Note that these routines do a lot of things, which I have not removed from the code.  But each saves just one file on disk, respectively the two truth tables.  The reason it works this way is that the same code makes all the different graphics, but the final poster versions required different tuning of graphics, so I saved the same underlying code under many names.
